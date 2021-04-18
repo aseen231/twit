@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Twitter Assignment</title>
+
+
+    <script src="/twitter.js" charset="utf-8"></script>
+
+   <a id="twitter-button" class="btn btn-block btn-social btn-twitter">
+     <i class="fa fa-twitter"></i> Sign in with Twitter
+   </a>
+  </head>
+
+  <body>
+
+    <a href="#"><input type = "button" id = "loginTwitter" class = "btn btn-primary"  value = "Login | Twitter "/></a>
+
+    <h3>Log In With Twitter</h3>
+
+    <script>
+          $('#twitter-button').on('click', function() {
+            // Initialize with your OAuth.io app public key
+            OAuth.initialize('C3RA-PpK2Vbd9IOuBMfipa2Qf3w');
+            // Use popup for OAuth
+            OAuth.popup('twitter').then(twitter => {
+              console.log(twitter);
+              // Retrieves user data from oauth provider
+              console.log(twitter.me());
+            });
+          })
+        </script>
+
+  </body>
+</html>
